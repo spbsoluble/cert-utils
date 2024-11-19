@@ -71,7 +71,15 @@ def download_cert_chain(url):
 
 
 @click.command()
-@click.argument('url', nargs=-1)
+@click.argument('urls', nargs=-1)
 def main(urls):
     for url in urls:
-        download_cert_chain(url)
+        try:
+            print(f"Downloading certificate for {url}")
+            download_cert_chain(url)
+        except Exception as e:
+            print(f"Failed to download certificate for {url}: {e}")
+            continue
+
+if __name__ == '__main__':
+    main()
