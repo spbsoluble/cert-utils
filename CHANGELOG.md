@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/spbsoluble/cert-utils/compare/v1.0.0...v1.0.1) (2024-11-19)
+
+
+### Bug Fixes
+
+* **downloadUrlPems:** add default entry point. ([f34bc3f](https://github.com/spbsoluble/cert-utils/commit/f34bc3fb3ac2582ed7bf160220501fad859914fe))
+
 # 1.0.0 (2024-11-19)
 
 
