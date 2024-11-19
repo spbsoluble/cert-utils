@@ -1,0 +1,21 @@
+name: Build
+
+on:
+  push:
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: npm ci && npm install --save-dev semantic-release @semantic-release/git @semantic-release/changelog
+
+      - name: Release
+        env:
+          GH_TOKEN: ${{ secrets.APPROVE_README_PUSH }}
+        run: npx semantic-release
+        if: github.ref == 'refs/heads/main'
